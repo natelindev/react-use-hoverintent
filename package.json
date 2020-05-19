@@ -1,6 +1,6 @@
 {
   "name": "react-use-hoverintent",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React hook for hoverIntent",
   "main": "index.ts",
   "keywords": [
@@ -20,5 +20,8 @@
   "repository": "https://github.com/llldar/react-use-hoverintent",
   "peerDependencies": {
     "react": "^16.8.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

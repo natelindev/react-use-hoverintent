@@ -1,0 +1,23 @@
+{
+  "name": "react-use-hoverintent",
+  "version": "1.0.0",
+  "description": "React hook for hoverIntent",
+  "main": "index.ts",
+  "keywords": [
+    "hover",
+    "hoverintent",
+    "delay",
+    "react",
+    "hooks"
+  ],
+  "author": "linlilulll@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.9.35",
+    "react": "^16.13.1",
+    "typescript": "^3.9.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  }
+}

@@ -17,6 +17,7 @@
     "react": "^16.13.1",
     "typescript": "^3.9.2"
   },
+  "repository": "https://github.com/llldar/react-use-hoverintent",
   "peerDependencies": {
     "react": "^16.8.0"
   }

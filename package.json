@@ -22,6 +22,6 @@
     "react": "^16.8.0"
   },
   "scripts": {
-    "build": "tsc && cp package.json LICENSE.md ./dist"
+    "build": "tsc && cp package.json LICENSE.md README.md ./dist"
   }
 }

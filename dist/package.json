@@ -3,9 +3,8 @@
   "version": "1.1.1",
   "description": "React hook for hoverIntent",
   "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "type": "module",
+	"module": "dist/index.js",
+	"types": "dist/index.d.ts",
   "keywords": [
     "hover",
     "hoverintent",

@@ -1,6 +1,6 @@
 {
   "name": "@darius_rosendahl/react-use-hoverintent",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "React hook for hoverIntent",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -24,11 +24,7 @@
     "react": "^16.8.0"
   },
   "exclude": [
-    "node_modules",
-    "build"
-  ],
-  "files": [
-    "dist/**/*"
+    "node_modules"
   ],
   "scripts": {
     "build": "tsc && babel src --out-dir dist --extensions .ts,.tsx,.js,.jsx && cp package.json LICENSE.md README.md ./dist"

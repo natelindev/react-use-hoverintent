@@ -1,3 +1,12 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.useHoverIntent = useHoverIntent;
+
+var _react = require("react");
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -10,8 +19,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-import { useState, useEffect, useRef, useImperativeHandle } from 'react';
-export function useHoverIntent(options) {
+function useHoverIntent(options) {
   var ref = options.ref,
       _options$sensitivity = options.sensitivity,
       sensitivity = _options$sensitivity === void 0 ? 6 : _options$sensitivity,
@@ -19,9 +27,9 @@ export function useHoverIntent(options) {
       interval = _options$interval === void 0 ? 100 : _options$interval,
       _options$timeout = options.timeout,
       timeout = _options$timeout === void 0 ? 0 : _options$timeout;
-  var intentRef = useRef(null);
+  var intentRef = (0, _react.useRef)(null);
 
-  var _useState = useState(false),
+  var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       isHovering = _useState2[0],
       setIsHovering = _useState2[1];
@@ -100,7 +108,7 @@ export function useHoverIntent(options) {
     }
   };
 
-  useEffect(function () {
+  (0, _react.useEffect)(function () {
     var currentRef = intentRef.current;
 
     if (currentRef) {
@@ -115,7 +123,7 @@ export function useHoverIntent(options) {
       }
     };
   });
-  useImperativeHandle(ref, function () {
+  (0, _react.useImperativeHandle)(ref, function () {
     return intentRef.current;
   }, [intentRef]);
   return [isHovering, intentRef];

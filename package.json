@@ -3,9 +3,8 @@
   "version": "1.1.4",
   "description": "React hook for hoverIntent",
   "main": "dist/index.js",
-	"module": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "commonjs",
   "keywords": [
     "hover",
     "hoverintent",
@@ -24,7 +23,19 @@
   "peerDependencies": {
     "react": "^16.8.0"
   },
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
-    "build": "tsc && cp package.json LICENSE.md README.md ./dist"
+    "build": "tsc && babel src --out-dir dist --extensions .ts,.tsx,.js,.jsx && cp package.json LICENSE.md README.md ./dist"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1"
   }
 }

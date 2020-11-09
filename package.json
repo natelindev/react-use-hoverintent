@@ -1,6 +1,6 @@
 {
-  "name": "@darius_rosendahl/react-use-hoverintent",
-  "version": "1.1.7",
+  "name": "react-use-hoverintent",
+  "version": "1.2.0",
   "description": "React hook for hoverIntent",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -15,8 +15,11 @@
   "author": "linlilulll@gmail.com",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.12.1",
     "@types/react": "^16.9.35",
+    "copyfiles": "^2.4.0",
     "react": "^16.13.1",
+    "rimraf": "^3.0.2",
     "typescript": "^3.9.2"
   },
   "repository": "https://github.com/llldar/react-use-hoverintent",
@@ -27,9 +30,10 @@
     "node_modules"
   ],
   "scripts": {
-    "build": "tsc && babel src --out-dir dist --extensions .ts,.tsx,.js,.jsx && cp package.json LICENSE.md README.md ./dist"
+    "build": "rimraf dist && tsc --emitDeclarationOnly && babel src --out-dir dist --extensions .ts,.tsx && copyfiles package.json LICENSE.md README.md ./dist"
   },
   "dependencies": {
+    "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
     "@babel/preset-typescript": "^7.12.1"

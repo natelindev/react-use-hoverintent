@@ -20,7 +20,11 @@
     "copyfiles": "^2.4.0",
     "react": "^16.13.1",
     "rimraf": "^3.0.2",
-    "typescript": "^3.9.2"
+    "typescript": "^4.1.2",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1"
   },
   "repository": "https://github.com/llldar/react-use-hoverintent",
   "peerDependencies": {
@@ -31,11 +35,5 @@
   ],
   "scripts": {
     "build": "rimraf dist && tsc --emitDeclarationOnly && babel src --out-dir dist --extensions .ts,.tsx && copyfiles package.json LICENSE.md README.md ./dist"
-  },
-  "dependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "@babel/preset-react": "^7.12.1",
-    "@babel/preset-typescript": "^7.12.1"
   }
 }

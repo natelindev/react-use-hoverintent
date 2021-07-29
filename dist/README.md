@@ -1,4 +1,15 @@
-## React useHoverIntent
+<br/>
+<h2 align="center">React useHoverIntent</h2>
+<br/>
+
+<p align="center">
+  <a aria-label="Downloads" href="https://github.com/llldar/react-use-hoverintent/">
+    <img alt="Downloads" src="https://img.shields.io/npm/dt/react-use-hoverintent?style=for-the-badge">
+  </a>
+  <a aria-label="License" href="https://github.com/llldar/react-use-hoverintent/blob/master/LICENSE">
+    <img alt="MIT License" src="https://img.shields.io/github/license/llldar/vlepo?style=for-the-badge">
+  </a>
+</p>
 
 react-use-hoverintent is a react hook which allows you to use classic hoverintent behaviour in modern, react way.
 

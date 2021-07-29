@@ -5,5 +5,5 @@ interface optionType {
     interval?: number;
     timeout?: number;
 }
-export declare function useHoverIntent<T = HTMLElement>(options: optionType): [boolean, React.RefObject<HTMLElement & T>];
+export declare function useHoverIntent<T = HTMLElement>(options?: optionType): [boolean, React.RefObject<HTMLElement & T>];
 export {};

@@ -8,9 +8,9 @@ interface optionType {
 }
 
 export function useHoverIntent<T = HTMLElement>(
-  options: optionType
+  options?: optionType
 ): [boolean, React.RefObject<HTMLElement & T>] {
-  const { ref, sensitivity = 6, interval = 100, timeout = 0 } = options;
+  const { ref, sensitivity = 6, interval = 100, timeout = 0 } = options ?? {};
   const intentRef = useRef<HTMLElement & T>(null);
   const [isHovering, setIsHovering] = useState(false);
 

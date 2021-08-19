@@ -20,7 +20,7 @@
     "@babel/preset-env": "7.15.0",
     "@babel/preset-react": "7.14.5",
     "@babel/preset-typescript": "7.15.0",
-    "@types/react": "17.0.17",
+    "@types/react": "17.0.19",
     "copyfiles": "2.4.1",
     "react": "17.0.2",
     "rimraf": "3.0.2",

@@ -77,6 +77,9 @@ export function useHoverIntent<T = HTMLElement>(
     }
 
     return () => {
+      if (timer) {
+        clearTimeout(timer);
+      }
       if (currentRef) {
         currentRef.removeEventListener('mouseover', dispatchOver, false);
         currentRef.removeEventListener('mouseout', dispatchOut, false);

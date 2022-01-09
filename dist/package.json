@@ -15,16 +15,16 @@
   "author": "linlilulll@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "7.16.0",
-    "@babel/core": "7.16.0",
-    "@babel/preset-env": "7.16.0",
-    "@babel/preset-react": "7.16.0",
-    "@babel/preset-typescript": "7.16.0",
-    "@types/react": "17.0.27",
+    "@babel/cli": "7.16.7",
+    "@babel/core": "7.16.7",
+    "@babel/preset-env": "7.16.7",
+    "@babel/preset-react": "7.16.7",
+    "@babel/preset-typescript": "7.16.7",
+    "@types/react": "17.0.38",
     "copyfiles": "2.4.1",
     "react": "17.0.2",
     "rimraf": "3.0.2",
-    "typescript": "4.4.3"
+    "typescript": "4.5.4"
   },
   "repository": "https://github.com/natelindev/react-use-hoverintent",
   "exclude": [

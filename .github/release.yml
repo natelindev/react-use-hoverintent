@@ -1,0 +1,39 @@
+name: auto-release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['16']
+
+    environment:
+      name: Production
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: use node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node_version }}
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: check types
+        run: yarn typecheck
+
+      - name: build
+        run: yarn build
+
+      - name: publish package
+        run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

@@ -3,11 +3,11 @@
 <br/>
 
 <p align="center">
-  <a aria-label="Downloads" href="https://github.com/llldar/react-use-hoverintent/">
+  <a aria-label="Downloads" href="https://github.com/natelindev/react-use-hoverintent/">
     <img alt="Downloads" src="https://img.shields.io/npm/dt/react-use-hoverintent?style=for-the-badge">
   </a>
-  <a aria-label="License" href="https://github.com/llldar/react-use-hoverintent/blob/master/LICENSE">
-    <img alt="MIT License" src="https://img.shields.io/github/license/llldar/vlepo?style=for-the-badge">
+  <a aria-label="License" href="https://github.com/natelindev/react-use-hoverintent/blob/master/LICENSE">
+    <img alt="MIT License" src="https://img.shields.io/github/license/natelindev/vlepo?style=for-the-badge">
   </a>
 </p>
 

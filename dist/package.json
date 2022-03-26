@@ -15,9 +15,9 @@
   "author": "linlilulll@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "7.16.7",
-    "@babel/core": "7.16.7",
-    "@babel/preset-env": "7.16.7",
+    "@babel/cli": "7.17.6",
+    "@babel/core": "7.17.8",
+    "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "7.16.7",
     "@babel/preset-typescript": "7.16.7",
     "@types/react": "17.0.38",

@@ -1,4 +1,11 @@
-import { useEffect, useImperativeHandle, useRef, useState } from 'react';
+import {
+  Dispatch,
+  SetStateAction,
+  useState,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from "react";
 
 interface optionType {
   ref?: React.Ref<HTMLElement | null>;
@@ -7,9 +14,13 @@ interface optionType {
   timeout?: number;
 }
 
-export function useHoverIntent<T = HTMLElement>(
+export const useHoverIntent = <T>(
   options?: optionType
-): [boolean, React.RefObject<HTMLElement & T>] {
+): [
+  boolean,
+  Dispatch<SetStateAction<boolean>>,
+  React.RefObject<HTMLElement & T>
+] => {
   const { ref, sensitivity = 6, interval = 100, timeout = 0 } = options ?? {};
   const intentRef = useRef<HTMLElement & T>(null);
   const [isHovering, setIsHovering] = useState(false);
@@ -46,13 +57,13 @@ export function useHoverIntent<T = HTMLElement>(
       clearTimeout(timer);
     }
     if (intentRef.current) {
-      intentRef.current.removeEventListener('mousemove', tracker, false);
+      intentRef.current.removeEventListener("mousemove", tracker, false);
     }
     if (!isHovering) {
       pX = e.clientX;
       pY = e.clientY;
       if (intentRef.current) {
-        intentRef.current.addEventListener('mousemove', tracker, false);
+        intentRef.current.addEventListener("mousemove", tracker, false);
       }
       timer = window.setTimeout(() => compare(e), interval);
     }
@@ -62,7 +73,7 @@ export function useHoverIntent<T = HTMLElement>(
       clearTimeout(timer);
     }
     if (intentRef.current) {
-      intentRef.current.removeEventListener('mousemove', tracker, false);
+      intentRef.current.removeEventListener("mousemove", tracker, false);
     }
     if (isHovering) {
       timer = window.setTimeout(() => delay(e), timeout);
@@ -72,8 +83,8 @@ export function useHoverIntent<T = HTMLElement>(
   useEffect(() => {
     const currentRef = intentRef.current;
     if (currentRef) {
-      currentRef.addEventListener('mouseover', dispatchOver, false);
-      currentRef.addEventListener('mouseout', dispatchOut, false);
+      currentRef.addEventListener("mouseover", dispatchOver, false);
+      currentRef.addEventListener("mouseout", dispatchOut, false);
     }
 
     return () => {
@@ -81,13 +92,13 @@ export function useHoverIntent<T = HTMLElement>(
         clearTimeout(timer);
       }
       if (currentRef) {
-        currentRef.removeEventListener('mouseover', dispatchOver, false);
-        currentRef.removeEventListener('mouseout', dispatchOut, false);
+        currentRef.removeEventListener("mouseover", dispatchOver, false);
+        currentRef.removeEventListener("mouseout", dispatchOut, false);
       }
     };
   });
 
   useImperativeHandle(ref, () => intentRef.current, [intentRef]);
 
-  return [isHovering, intentRef];
-}
+  return [isHovering, setIsHovering, intentRef];
+};

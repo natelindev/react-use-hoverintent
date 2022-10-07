@@ -11,7 +11,7 @@
   </a>
 </p>
 
-react-use-hoverintent is a react hook which allows you to use classic hoverintent behaviour in modern, react way.
+react-use-hoverintent is a react hook which allows you to use classic hoverintent behavior in modern, react way.
 
 "hoverIntent is a plug-in that attempts to determine the user's intent... like a crystal ball, only with mouse movement! It is similar to jQuery's hover method. However, instead of calling the handlerIn function immediately, hoverIntent waits until the user's mouse slows down enough before making the call."
 
@@ -52,20 +52,20 @@ Default `interval: 100`
 Basic usage
 
 ```javascript
-import React from 'react';
-import { useHoverIntent } from 'react-use-hoverintent';
+import React from "react";
+import { useHoverIntent } from "react-use-hoverintent";
 
 export const MyFunctionalComponent = (props) => {
   const [isHovering, ref] = useHoverIntent();
-  return <div ref={ref} className={`${isHovering ? 'hover' : ''}`}></div>;
+  return <div ref={ref} className={`${isHovering ? "hover" : ""}`}></div>;
 };
 ```
 
 With options
 
 ```javascript
-import React from 'react';
-import { useHoverIntent } from 'react-use-hoverintent';
+import React from "react";
+import { useHoverIntent } from "react-use-hoverintent";
 
 export const MyFunctionalComponent = (props) => {
   const [isHovering, ref] = useHoverIntent({
@@ -73,19 +73,19 @@ export const MyFunctionalComponent = (props) => {
     sensitivity: 10,
     interval: 200,
   });
-  return <div ref={ref} className={`${isHovering ? 'hover' : ''}`}></div>;
+  return <div ref={ref} className={`${isHovering ? "hover" : ""}`}></div>;
 };
 ```
 
 With ForwardRef
 
 ```js
-import React from 'react';
-import { useHoverIntent } from 'react-use-hoverintent';
+import React from "react";
+import { useHoverIntent } from "react-use-hoverintent";
 
 export const MyFunctionalComponent = React.forwardRef((props, ref) => {
   const [isHovering, intentRef] = useHoverIntent({ ref });
-  return <div ref={intentRef} className={`${isHovering ? 'hover' : ''}`}></div>;
+  return <div ref={intentRef} className={`${isHovering ? "hover" : ""}`}></div>;
 });
 ```
 
@@ -94,15 +94,15 @@ With Custom UI lib
 Check if they have `innerRef` prop or forwarded ref
 
 ```javascript
-import React from 'react';
-import { useHoverIntent } from 'react-use-hoverintent';
+import React from "react";
+import { useHoverIntent } from "react-use-hoverintent";
 
 export const MyFunctionalComponent = (props) => {
   const [isHovering, intentRef] = useHoverIntent();
   return (
     <Card
       innerRef={intentRef}
-      className={`${isHovering ? 'hover' : ''}`}
+      className={`${isHovering ? "hover" : ""}`}
     ></Card>
   );
 };

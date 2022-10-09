@@ -1,6 +1,6 @@
 {
   "name": "react-use-hoverintent",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "React hook for hoverIntent",
   "main": "dist/index.js",
   "module": "dist/index.js",

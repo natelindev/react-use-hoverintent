@@ -33,7 +33,7 @@ npm install react-use-hoverintent
 
 ## Options
 
-`ref`: the react element ref which you want hoverintent to be applied, required.
+`ref`: the react element ref which you want hoverintent to be applied.
 
 `timeout` : A simple delay, in milliseconds, before the `onMouseOut` callback is fired. If the user mouses back over the element before the timeout has expired the `onMouseOut` callback will not be called (nor will the `onMouseOver` callback be called). This is primarily to protect against sloppy/human mousing trajectories that temporarily (and unintentionally) take the user off of the target element... giving them time to return.
 
@@ -56,8 +56,8 @@ import React from "react";
 import { useHoverIntent } from "react-use-hoverintent";
 
 export const MyFunctionalComponent = (props) => {
-  const [isHovering, ref] = useHoverIntent();
-  return <div ref={ref} className={`${isHovering ? "hover" : ""}`}></div>;
+  const [isHovering, intentRef, setIsHovering] = useHoverIntent();
+  return <div ref={intentRef} className={`${isHovering ? "hover" : ""}`}></div>;
 };
 ```
 
@@ -68,12 +68,12 @@ import React from "react";
 import { useHoverIntent } from "react-use-hoverintent";
 
 export const MyFunctionalComponent = (props) => {
-  const [isHovering, ref] = useHoverIntent({
+  const [isHovering, intentRef, setIsHovering] = useHoverIntent({
     timeout: 100,
     sensitivity: 10,
     interval: 200,
   });
-  return <div ref={ref} className={`${isHovering ? "hover" : ""}`}></div>;
+  return <div ref={intentRef} className={`${isHovering ? "hover" : ""}`} />;
 };
 ```
 
@@ -84,8 +84,8 @@ import React from "react";
 import { useHoverIntent } from "react-use-hoverintent";
 
 export const MyFunctionalComponent = React.forwardRef((props, ref) => {
-  const [isHovering, intentRef] = useHoverIntent({ ref });
-  return <div ref={intentRef} className={`${isHovering ? "hover" : ""}`}></div>;
+  const [isHovering, intentRef, setIsHovering] = useHoverIntent({ ref });
+  return <div ref={intentRef} className={`${isHovering ? "hover" : ""}`} />;
 });
 ```
 
@@ -98,12 +98,40 @@ import React from "react";
 import { useHoverIntent } from "react-use-hoverintent";
 
 export const MyFunctionalComponent = (props) => {
-  const [isHovering, intentRef] = useHoverIntent();
+  const [isHovering, intentRef, setIsHovering] = useHoverIntent();
   return (
     <Card
       innerRef={intentRef}
       className={`${isHovering ? "hover" : ""}`}
     ></Card>
+  );
+};
+```
+
+After v1.2.9
+
+With custom hover state control
+
+```javascript
+import React, { useCallback } from "react";
+import { useHoverIntent } from "react-use-hoverintent";
+
+export const MyFunctionalComponent = (props) => {
+  const [isHovering, intentRef, setIsHovering] = useHoverIntent();
+
+  const mouseOverHandler = useCallback(() => {
+    () => setIsHovering(true);
+  }, [setIsHovering]);
+
+  const mouseOutHandler = useCallback(() => {
+    () => setIsHovering(false);
+  }, [setIsHovering]);
+
+  return (
+    <>
+      <div ref={intentRef} className={`${isHovering ? "hover" : ""}`} />
+      <textarea onMouseOver={mouseOverHandler} onMouseOut={mouseOutHandler} />
+    </>
   );
 };
 ```

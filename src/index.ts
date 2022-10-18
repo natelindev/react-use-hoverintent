@@ -18,8 +18,8 @@ export const useHoverIntent = <T>(
   options?: optionType
 ): [
   boolean,
-  Dispatch<SetStateAction<boolean>>,
-  React.RefObject<HTMLElement & T>
+  React.RefObject<HTMLElement & T>,
+  Dispatch<SetStateAction<boolean>>
 ] => {
   const { ref, sensitivity = 6, interval = 100, timeout = 0 } = options ?? {};
   const intentRef = useRef<HTMLElement & T>(null);
@@ -100,5 +100,5 @@ export const useHoverIntent = <T>(
 
   useImperativeHandle(ref, () => intentRef.current, [intentRef]);
 
-  return [isHovering, setIsHovering, intentRef];
+  return [isHovering, intentRef, setIsHovering];
 };

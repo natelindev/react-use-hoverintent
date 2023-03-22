@@ -23,7 +23,7 @@
     "@types/react": "18.0.21",
     "copyfiles": "2.4.1",
     "react": "18.2.0",
-    "rimraf": "3.0.2",
+    "rimraf": "4.4.1",
     "typescript": "4.8.4"
   },
   "repository": "https://github.com/natelindev/react-use-hoverintent",

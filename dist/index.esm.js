@@ -1,11 +1,9 @@
-'use strict';
-
-var react = require('react');
+import { useRef, useState, useEffect, useImperativeHandle } from 'react';
 
 var useHoverIntent = function (options) {
     var _a = options !== null && options !== void 0 ? options : {}, ref = _a.ref, _b = _a.sensitivity, sensitivity = _b === void 0 ? 6 : _b, _c = _a.interval, interval = _c === void 0 ? 100 : _c, _d = _a.timeout, timeout = _d === void 0 ? 0 : _d;
-    var intentRef = react.useRef(null);
-    var _e = react.useState(false), isHovering = _e[0], setIsHovering = _e[1];
+    var intentRef = useRef(null);
+    var _e = useState(false), isHovering = _e[0], setIsHovering = _e[1];
     var x = 0, y = 0, pX = 0, pY = 0, timer = 0;
     var delay = function (e) {
         if (timer) {
@@ -57,7 +55,7 @@ var useHoverIntent = function (options) {
             timer = window.setTimeout(function () { return delay(); }, timeout);
         }
     };
-    react.useEffect(function () {
+    useEffect(function () {
         var currentRef = intentRef.current;
         if (currentRef) {
             currentRef.addEventListener("mouseover", dispatchOver, false);
@@ -73,8 +71,8 @@ var useHoverIntent = function (options) {
             }
         };
     });
-    react.useImperativeHandle(ref, function () { return intentRef.current; }, [intentRef]);
+    useImperativeHandle(ref, function () { return intentRef.current; }, [intentRef]);
     return [isHovering, intentRef, setIsHovering];
 };
 
-exports.useHoverIntent = useHoverIntent;
+export { useHoverIntent };

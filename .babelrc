@@ -1,13 +1,13 @@
 {
-	"presets": [
-		[
-			"@babel/preset-env",
-			{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
         "modules": "commonjs"
-			}
-		],
-		"@babel/preset-react",
-		"@babel/typescript"
-	],
-	"sourceMaps": "inline"
+      }
+    ],
+    "@babel/preset-react",
+    "@babel/typescript"
+  ],
+  "sourceMaps": false
 }

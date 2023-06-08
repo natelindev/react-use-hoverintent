@@ -136,6 +136,18 @@ export const MyFunctionalComponent = (props) => {
 };
 ```
 
+After v1.3.0
+
+use version of your desire
+
+index.js - commonjs
+
+\*.cjs - commonjs
+
+\*.esm.js - es module
+
+\*.min.\* minified version
+
 ## License
 
 MIT

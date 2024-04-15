@@ -29,7 +29,7 @@
     "@rollup/plugin-commonjs": "24.1.0",
     "@rollup/plugin-node-resolve": "15.0.2",
     "@rollup/plugin-typescript": "11.1.0",
-    "@types/react": "18.2.9",
+    "@types/react": "18.2.79",
     "react": "18.2.0",
     "rimraf": "5.0.1",
     "rollup": "3.21.5",

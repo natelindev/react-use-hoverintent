@@ -11,6 +11,10 @@
     "jquery"
   ],
   "repository": "https://github.com/natelindev/react-use-hoverintent",
+  "homepage": "https://github.com/natelindev/react-use-hoverintent#readme",
+  "bugs": {
+    "url": "https://github.com/natelindev/react-use-hoverintent/issues"
+  },
   "license": "MIT",
   "author": "linlilulll@gmail.com",
   "main": "dist/index.js",
